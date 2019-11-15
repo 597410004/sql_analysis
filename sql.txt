@@ -1,0 +1,14 @@
+CREATE TABLE report2.hottopic_direct_summary
+(
+    `id`           int(11)      NOT NULL AUTO_INCREMENT,
+    `direct`       int(11)      NOT NULL COMMENT '是否为直投，1：直投，0：暗投',
+    `money`        int(11)      NOT NULL COMMENT '收入金额',
+    `money_acount` double(16,5) NOT NULL COMMENT '收入占比',
+    `cpm`          double(16,5) NOT NULL COMMENT 'cost per mille',
+    `acp`          double(16,5) NOT NULL COMMENT 'average click price',
+    `ctr`          double(16,5) NOT NULL COMMENT 'click through rate' ,
+    `date`         date         NOT NULL,
+    `created_time` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`) USING BTREE,
+    KEY `date` (`date`) USING BTREE
+) DEFAULT CHARSET=utf8 COMMENT='一些评论';
